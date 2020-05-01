@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Photo Albums";
+}
+
+<div style="padding-bottom:20px;" class="text-center">
+    <h1 class="display-4">Welcome to Bertoni Photos Albums</h1>
+   
+    <p>Please select an album to view its photos:</p>
+
+    @Html.DropDownList("ddAlbums", new SelectList(ViewBag.Albums, "Id", "Title"), "Select Album")
+
+</div>
+
+<div id="photos">
+
+</div>
+
+@section Scripts{
+    <script src="~/js/photo-album/photoAlbum.js"></script>
+}

@@ -1,0 +1,29 @@
+﻿@using Bertoni.CodingChallenge.Common.Entities;
+@model List<Comment>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Body</td>
+            </tr>
+        </thead>
+        @foreach (var comment in Model)
+        {
+            <tr>
+                <td style="width:100px;">@comment.Name</td>
+                <td style="width:100px;">@comment.Email</td>
+                <td>@comment.Body</td>
+            </tr>
+        }
+        @if (Model.Count == 0)
+        {
+            <tfoot>
+                <tr>
+                    <td colspan="3">Oops No Comments found against this photo</td>
+                </tr>
+            </tfoot>
+        }
+    </table>
